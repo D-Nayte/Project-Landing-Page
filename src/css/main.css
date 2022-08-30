@@ -1,4 +1,7 @@
 @import "header.css";
+@import "variables.css";
+@import "color.css";
+@import "subscribe.css";
 
 :root {
   font-size: 18px;
@@ -14,4 +17,26 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+html {
+  background-color: var(--mainColor);
+  color: var(--textColor);
+}
+
+body {
+  padding: calc(var(--padding) * 1) calc(var(--padding) * 2);
+}
+
+header,
+main,
+aside,
+footer {
+  background-color: white;
+  padding: var(--padding);
+}
+
+a {
+  color: var(--textColor);
+  text-decoration: none;
+  transition: all 250ms;
 }

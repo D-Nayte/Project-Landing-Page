@@ -1,16 +1,29 @@
-header {
-  display: flex;
+nav {
   align-items: center;
+  justify-content: space-between;
+  display: flex;
 }
-header h1 {
-  flex-grow: 0;
-}
-header nav {
-  flex-grow: 2;
+
+nav h1 {
+  flex-grow: 1;
 }
 
 nav ul {
+  flex-grow: 5;
   list-style: none;
   display: flex;
   justify-content: space-between;
+}
+nav ul li {
+  transition: all 250ms;
+  border-bottom: 4px solid transparent;
+  border-radius: 25%;
+}
+
+nav li .active {
+  border-bottom: 2px solid red;
+}
+
+nav ul li:hover {
+  transform: scale(1.05);
 }

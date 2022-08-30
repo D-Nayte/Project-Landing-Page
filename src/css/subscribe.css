@@ -1,0 +1,79 @@
+#sub-container {
+  background-color: var(--offColor);
+}
+
+#subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  justify-items: stretch;
+  align-content: stretch;
+}
+
+#subscribe form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "firstName subject"
+    "surname message"
+    "email message"
+    "phone button";
+  gap: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding: calc(var(--padding) / 2);
+}
+
+#subscribe form label:nth-child(1) {
+  grid-area: firstName;
+}
+#subscribe form label:nth-child(2) {
+  grid-area: surname;
+}
+#subscribe form label:nth-child(3) {
+  grid-area: email;
+}
+#subscribe form label:nth-child(4) {
+  grid-area: message;
+}
+#subscribe form label:nth-child(5) {
+  grid-area: phone;
+}
+#subscribe form label:nth-child(6) {
+  grid-area: subject;
+}
+#subscribe form button:last-child {
+  grid-area: button;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  border: 4px solid pink;
+  background-color: inherit;
+}
+
+#subscribe form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-basis: 45%;
+}
+
+#subscribe input,
+textarea {
+  border: none;
+  border-bottom: 2px solid gray;
+  resize: none;
+}
+
+#subscribe form textarea {
+  height: 100%;
+}
+
+#subscribe p:last-child {
+  font-size: 12px;
+}

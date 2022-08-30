@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/554d91261a.js" crossorigin="anonymous"></script>
     <script src="./src/scripts/app.js" defer></script>
     <link rel="stylesheet" href="./src/css/main.css" />
     <title>Landing Page Project</title>
   </head>
   <body>
     <header>
-      <h1>PinkPink</h1>
       <nav>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
+        <h1>PinkPink</h1>
+        <ul></ul>
       </nav>
     </header>
 
@@ -32,11 +29,42 @@
       </section>
     </main>
 
-    <aside>
-      <section id="subscripe">
-        <h2></h2>
-        <p></p>
-        <form action="#"></form>
+    <aside id="sub-container">
+      <section id="subscribe">
+        <h2>Subscribe to our newsletter to get updatet</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, atque vitae! Aspernatur, quasi. Quibusdam consectetur maxime quisquam, accusamus libero
+          sit fugit omnis corrupti inventore sed. Vitae optio et labore soluta?
+        </p>
+
+        <form action="#" method="POST">
+          <label
+            >Your first name
+            <input type="text" name="firstName" placeholder="Write your first name here" />
+          </label>
+          <label
+            >Your Surname
+            <input type="text" name="surname" placeholder="Write your surname name here" />
+          </label>
+          <label
+            >Email Adress
+            <input type="email" name="email" placeholder="Write your email here" />
+          </label>
+          <label
+            >Message
+            <textarea name="message" cols="0" rows="4" placeholder="Add a brief of your Project"></textarea>
+          </label>
+          <label
+            >Phone Number
+            <input type="tel" name="phone-Number" placeholder="Write your phone Number here" />
+          </label>
+          <label
+            >Subject
+            <input type="text" name="subject" placeholder="Write a subject line" />
+          </label>
+          <button type="submit" name="subscribe">Subscribe</button>
+        </form>
+        <p><i class="fa-solid fa-lock"></i> We don't spamm at all, our promise!</p>
       </section>
     </aside>
 
