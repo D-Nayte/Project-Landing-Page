@@ -215,12 +215,96 @@ nav ul li:last-child {
 }
 
 @media (min-width: 1024px) {
+  /* Navbar */
   #burger-icon {
     display: none;
   }
 
-  nav ul {
-    position: relative;
+  #header {
+    padding: 56px 54px 46px;
+  }
+
+  #header nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  #header h1 {
+    flex-basis: 33%;
+  }
+
+  #header ul {
+    position: static;
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around !important;
+    align-content: center;
+    transform: scale(1);
+    opacity: 1;
+    border: none;
+    pointer-events: all;
+  }
+
+  #header ul li {
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  #header li a {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-bottom: 4px solid transparent;
+    border-bottom-color: transparent;
+    border-radius: 4px;
+    transition: all 1000ms;
+  }
+
+  #header .activeLink {
+    border-bottom-color: var(--offColor);
+  }
+
+  header ul li:first-child {
+    display: none;
+    border: none;
+  }
+
+  header ul li button {
+    display: none;
+  }
+
+  /* Landing Picture/Card */
+
+  #header-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #header-card .intro {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 676px;
+  }
+
+  #header-card .intro .background-image {
+    height: 100%;
+    width: 100%;
+  }
+
+  #header-card .intro figcaption {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #header-card .cards {
+    flex-basis: 33%;
   }
 }

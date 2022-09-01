@@ -77,7 +77,7 @@ function addLinkTrackerByScroll() {
             link.classList.add("activeLink")
             
             // change heading in mobile version
-            if (window.visualViewport.width < 1030) {
+            if (window.visualViewport.width < 1000) {
                 changeHeadOnMobile(link)
             }
         }
@@ -101,17 +101,17 @@ let buttonLeft = document.querySelector(".b-left")
 let buttonRight = document.querySelector(".b-right")
 let buttons = document.querySelectorAll("button")
 
-let translateValue = -60
+let translateValue = 0
 buttons.forEach(button => {
     button.addEventListener("click",(event) => {
         let galerie = document.querySelector(".examples")
         // if right arrow was clicked
         if (event.target.classList.value.includes("b-right")) {
-            translateValue -= 200
-            galerie.style.transform = `translateX(${translateValue}vw)`;
+            translateValue -= 33.33333
+            galerie.style.transform = `translateX(${translateValue}%)`;
         } else {
-            translateValue +=200;
-            galerie.style.transform = `translateX(${translateValue}vw)`;
+            translateValue +=33.333333;
+            galerie.style.transform = `translateX(${translateValue}%)`;
 
         }
 

@@ -36,24 +36,27 @@
   height: 639px;
   border-radius: 15px;
   overflow: hidden;
+  position: relative;
 }
 
 #showcase .card-container .examples {
+  width: 300%;
   height: 100%;
   display: flex;
   border-radius: 15px;
   transition: all 450ms ease-in-out;
   position: relative;
-  transform: translateX(-60vw);
+  /* transform: translateX(-60vw); */
 }
 
-#showcase .card-container img {
-  width: 200vw;
+#showcase .card-container picture {
+  width: 100%;
 }
 
-#showcase .item img {
-  aspect-ratio: 2/1;
+#showcase .examples img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 #showcase .card {
@@ -61,12 +64,12 @@
   border-radius: 10px;
   padding: 19px;
   display: flex;
-  width: calc(100% - 24px);
   flex-direction: column;
   position: absolute;
-  left: calc(460vw + 12px);
-  bottom: 12px;
   z-index: 2;
+  bottom: 12px;
+  right: 12px;
+  width: calc(33.33333% - 24px);
 }
 
 #showcase .card h3 {
@@ -83,4 +86,50 @@
   letter-spacing: 6px;
   display: flex;
   justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  section#showcase {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  section#showcase h2 {
+    padding: 0;
+  }
+
+  section#showcase #buttons {
+    margin-bottom: 37px;
+    order: 2;
+  }
+
+  section#showcase .card-container .examples {
+    width: 100%;
+    height: 500px;
+    transform: translateX(0);
+    display: flex;
+    column-gap: 22px;
+  }
+
+  section#showcase .examples picture {
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  section#showcase .examples picture img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
+  }
+
+  section#showcase .card {
+    width: calc(100% - 33.33333% - 33.333333% - 15px - 24px);
+    right: 12px;
+  }
 }
