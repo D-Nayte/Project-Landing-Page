@@ -1,0 +1,55 @@
+#testimonials {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+
+#testimonials figcaption {
+  background-color: var(--mainColor);
+  padding: 51px 40px 50px;
+}
+
+#testimonials address {
+  margin-top: 31px;
+}
+
+#testimonials address a {
+  color: white;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+}
+
+#testimonials abbr {
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 30px;
+  opacity: 0.8;
+}
+
+#testimonials .player {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vw;
+}
+
+#testimonials .player svg {
+  position: absolute;
+  bottom: center;
+  left: calc(50% - 28.5px);
+  bottom: calc(50% - 29.5px);
+  z-index: 1;
+}
+
+#testimonials .player img {
+  position: relative;
+  width: 160vw;
+  right: 5rem;
+  bottom: 10rem;
+  transform: rotatey(180deg);
+}

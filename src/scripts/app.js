@@ -11,7 +11,7 @@ function createNavListItems() {
 
     // add heading to ul
     let liH2 = document.createElement("li")
-    liH2.innerHTML = `<h2 class="heading"><a href="#header-card" >PinkPink<span>.</span></a> <button>&#10006;</button></h2>`
+    liH2.innerHTML = `<h2 class="heading"><a href="#header-card" >PinkPink<span id="pointer">.</span></a> <button>&#10006;</button></h2>`
     fragment.appendChild(liH2)
 
     //create list items based on sections quantity
@@ -95,3 +95,29 @@ function changeHeadOnMobile(link) {
     //else section ID will show
     header.textContent = link.textContent     
 }
+
+
+let buttonLeft = document.querySelector(".b-left")
+let buttonRight = document.querySelector(".b-right")
+let buttons = document.querySelectorAll("button")
+
+let translateValue = -60
+buttons.forEach(button => {
+    button.addEventListener("click",(event) => {
+        let galerie = document.querySelector(".examples")
+        // if right arrow was clicked
+        if (event.target.classList.value.includes("b-right")) {
+            translateValue -= 200
+            galerie.style.transform = `translateX(${translateValue}vw)`;
+        } else {
+            translateValue +=200;
+            galerie.style.transform = `translateX(${translateValue}vw)`;
+
+        }
+
+        
+        
+        console.log(galerie);
+    })
+})
+

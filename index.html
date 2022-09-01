@@ -12,7 +12,7 @@
   <body>
     <header>
       <nav>
-        <h1 class="heading"><a href="#header-card">PinkPink</a><span>.</span></h1>
+        <h1 class="heading"><a href="#header-card">PinkPink</a><span id="pointer">.</span></h1>
         <button id="burger-icon">
           <div class="burger-row"></div>
           <div class="burger-row"></div>
@@ -92,28 +92,31 @@
       </section>
 
       <section id="showcase" class="main">
-        <h2>
-          Explore our exclusive design showcase.
-          <button>&#8592;</button>
-          <button>&#8594;</button>
-        </h2>
+        <h2>Explore our exclusive design showcase.</h2>
+        <div id="buttons">
+          <button class="button b-left">&#8592;</button>
+          <button class="button b-right">&#8594;</button>
+        </div>
         <div class="card-container">
-          <img src="./src/pictures/showcase01.jpg" alt="" />
-          <!-- <img src="./src/pictures/showcase02.jpg" alt="" />
-          <img src="./src/pictures/showcase03.jpg" alt="" /> -->
-          <div class="card">
-            <h3>Mopand</h3>
-            <p>PHONIX, ARIZONA <button>&#8594;</button></p>
+          <div class="examples">
+            <img src="./src/pictures/showcase01.jpg" alt="" />
+            <img src="./src/pictures/showcase02.jpg" alt="" />
+            <img src="./src/pictures/showcase03.jpg" alt="" />
+            <div class="card">
+              <h3>Mopand</h3>
+              <p>PHONIX, ARIZONA <button>&#8594;</button></p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="how-we-do-it" class="main">
-        <h2>This is how we do it</h2>
-        <ol>
+        <h2>This is how we do it.</h2>
+        <ul>
           <li>
             <div class="card">
-              <h3>Discuss the concept with us</h3>
+              <p>01.</p>
+              <h3>Discuss the concept with us.</h3>
               <p>
                 Do you need a talented design eye to cast vision and look for one-of-a-kind opportunities in your home? This is a robust
                 consultation-conversation package.
@@ -123,6 +126,7 @@
           </li>
           <li>
             <div class="card">
+              <p>02.</p>
               <h3>Confirm the provided design.</h3>
               <p>
                 We will send you a proposal and service agreement for your review. Then we will get down to the exciting stuff and communicate concepts
@@ -133,6 +137,7 @@
           </li>
           <li>
             <div class="card">
+              <p>03.</p>
               <h3>We fully design and accessorize your home.</h3>
               <p>
                 Specializing in whole-home transformations, we design with intention to deliver interiors with a depth of character and emotion, and a breadth
@@ -141,11 +146,13 @@
               <button>LEARN MORE</button>
             </div>
           </li>
-        </ol>
+        </ul>
       </section>
 
       <section id="our-projects" class="main">
-        <img src="./src/pictures/projects01.jpg" alt="" />
+        <div class="picture-container">
+          <img src="./src/pictures/projects01.jpg" alt="" />
+        </div>
         <div class="card">
           <h3>Spend your happy time with full comfort.</h3>
           <p>As we develop each project's unique expression, we are transforming context and heritage into compelling stories and unparalleled experiences.</p>
@@ -161,8 +168,15 @@
             <abbr title="Delaware">St. Celina, Delaware</abbr>
           </figcaption>
           <div class="player">
-            <svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="39.3948" cy="39.3948" r="37.8948" fill="white" fill-opacity="0.14" stroke="white" stroke-width="3" />
+            <svg width="57" height="59" viewBox="0 0 57 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M54.677 29.1753C54.677 44.4553 42.8861 56.7183 28.4905 56.7183C14.0949 56.7183 2.30396 44.4553 2.30396 29.1753C2.30396 13.8953 14.0949 1.63232 28.4905 1.63232C42.8861 1.63232 54.677 13.8953 54.677 29.1753Z"
+                fill="white"
+                fill-opacity="0.14"
+                stroke="white"
+                stroke-width="3"
+              />
+              <path d="M25.1301 23.0195L34.2587 29.1754L25.1301 35.3312V23.0195Z" fill="white" />
             </svg>
             <img src="./src/pictures/testimonials01.jpg" alt="" />
           </div>
@@ -172,10 +186,10 @@
 
     <aside id="sub-container">
       <section id="subscribe" class="main">
-        <h2>Subscribe to our newsletter to get updatet</h2>
+        <h2>Subscribe to our newsletter to get updatet.</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, atque vitae! Aspernatur, quasi. Quibusdam consectetur maxime quisquam, accusamus libero
-          sit fugit omnis corrupti inventore sed. Vitae optio et labore soluta?
+          Get our latest update on your inbox. With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website
+          within few minutes.
         </p>
 
         <form action="#" method="POST">
@@ -213,9 +227,11 @@
       <ul>
         <li>
           <ul>
-            <li><h3>PinkPink.</h3></li>
+            <li>
+              <h3>PinkPink <span id="pointer">.</span></h3>
+            </li>
             <li>We make furniture with love and passions. No doubt, really.</li>
-            <li>©Ididit!</li>
+            <li class="none">©Ididit!</li>
           </ul>
         </li>
         <li>
@@ -243,6 +259,7 @@
           </ul>
         </li>
       </ul>
+      <p>©Ididit!</p>
     </footer>
   </body>
 </html>

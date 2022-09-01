@@ -3,6 +3,8 @@ header {
   position: sticky;
   z-index: 2;
   top: 0;
+  margin-top: 23px;
+  background-color: white;
 }
 
 nav {
@@ -12,6 +14,7 @@ nav {
   margin-bottom: 8.05vw;
   top: 0;
   background-color: white;
+  position: relative;
 }
 
 /* Navbar heading */
@@ -19,11 +22,6 @@ nav h1,
 .heading {
   flex-grow: 1;
   font-weight: 900;
-}
-
-nav h1 span,
-.heading span {
-  color: var(--offColor);
 }
 
 nav h2 {
@@ -45,7 +43,7 @@ nav ul {
   position: absolute;
   flex-direction: column;
   left: 40%;
-  top: -58%;
+  top: -200px;
   transform: scale(0.1);
   justify-content: space-between;
   display: flex;
@@ -53,7 +51,8 @@ nav ul {
   width: 100%;
   background-color: transparent;
   pointer-events: none;
-  transition: all 450ms;
+  transition: all 250ms;
+  border-bottom: 6px solid var(--offColor);
 }
 
 nav ul li {
@@ -65,16 +64,15 @@ nav ul li {
   padding: 0 var(--padding);
 }
 
-nav ul li a,
-nav li h2 {
+nav ul li a {
   flex-grow: 1;
-  border-bottom: 2px solid var(--highlightColor);
+  border-bottom: 2px solid var(--offColor);
   padding-bottom: 8.05vw;
   margin-top: 8.05vw;
 }
 
 nav ul li button {
-  border-bottom: 2px solid var(--highlightColor);
+  border-bottom: 2px solid var(--offColor);
   padding-bottom: 8.05vw;
   margin-top: 8.05vw;
   border: none;
@@ -86,6 +84,10 @@ nav li .active {
 
 nav ul li:hover {
   transform: scale(1.05);
+}
+
+nav ul li:last-child {
+  margin-bottom: 30px;
 }
 
 /* Buger Icon in mobile view */
@@ -114,6 +116,7 @@ nav ul li:hover {
   width: 100%;
   height: 0;
   border: 3px solid black;
+  background-color: black;
   border-radius: 7px;
 }
 
@@ -129,7 +132,7 @@ nav ul li:hover {
 /* Card */
 
 #header-card .intro {
-  background-color: var(--highlightColor);
+  background-color: var(--mainColorLow);
   border-radius: 20px;
   overflow: hidden;
   text-align: left;
@@ -190,7 +193,7 @@ nav ul li:hover {
 }
 
 #header-card .cards div {
-  background-color: var(--highlightColor);
+  background-color: var(--mainColorLow);
   width: 80px;
   height: 80px;
   display: flex;
