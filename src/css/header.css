@@ -1,9 +1,17 @@
 /* Navbar */
+header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8.05vw;
+  top: 0;
+  background-color: white;
 }
 
 /* Navbar heading */
@@ -97,7 +105,7 @@ nav ul li:hover {
   transform: scale(1.05);
 }
 
-#burger-icon:focus {
+#burger-icon.active {
   transform: scale(0.3);
 }
 
@@ -109,7 +117,7 @@ nav ul li:hover {
   border-radius: 7px;
 }
 
-#burger-icon:focus ~ ul {
+#burger-icon.active ~ ul {
   opacity: 1;
   pointer-events: all;
   left: 0;

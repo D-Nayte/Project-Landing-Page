@@ -1,16 +1,20 @@
 
+window.addEventListener("DOMContentLoaded", () => {
+    createNavListItems()
+    addLinkBehaviorOnClick()
+    addLinkTrackerByScroll()
+})
 
-
-function createNav() {
-    const allSections = document.querySelectorAll("section")
+function createNavListItems() {
+    const allSections = document.querySelectorAll(".main")
     const fragment = document.createDocumentFragment()
 
     // add heading to ul
     let liH2 = document.createElement("li")
-    liH2.innerHTML = `<h2 class="heading">PinkPink<span>.</span> <button>&#10006;</button></h2>`
+    liH2.innerHTML = `<h2 class="heading"><a href="#header-card" >PinkPink<span>.</span></a> <button>&#10006;</button></h2>`
     fragment.appendChild(liH2)
 
-    //create list items based on sections numbers
+    //create list items based on sections quantity
     allSections.forEach(section => {
     
         if (section.id != "") {
@@ -20,16 +24,74 @@ function createNav() {
            
            //create new HTML Element with Name
            let liElement = document.createElement("li")
-           liElement.innerHTML = `<a>${name}</a><button>&#62;</button>`
+           liElement.innerHTML = `<a href="#${section.id}">${name}</a><button>&#62;</button>`
            fragment.appendChild(liElement)
         }
-    })
-        
-        
+    })   
+
     //Add element to ul
     let ul = document.querySelector("nav ul")
     ul.appendChild(fragment)
 }
 
-createNav()
+function addLinkBehaviorOnClick() {
+    //Mobile Button behavior on click
+    let navButton = document.querySelector("#burger-icon")
+    navButton.addEventListener("click", () => navButton.classList.toggle("active") )
+    //standart Link behavior on click
+    let navLinks = document.querySelectorAll("header li")
+    navLinks.forEach(link => {
+        link.addEventListener("click", ( ()=> {
+            navButton.classList.toggle("active");
+            navLinks.forEach(link => link.classList.remove("active"))
+            link.classList.toggle("active")
+    }))
+    })
+}
 
+function addLinkTrackerByScroll() {
+    const allSections = document.querySelectorAll(".main")
+    let current = "";
+    let change = false
+
+    window.addEventListener("scroll", event => {
+        allSections.forEach(section => {
+            // only change DOM by enter a new section
+            if (window.scrollY >= section.offsetTop - (section.scrollHeight / 2 )) {
+                if (current == section.id) {
+                    return change = false  
+                }
+                change = true
+                current = section.id   
+            }
+            // standart header and no behavior on start heigh
+            if (window.scrollY <= (section.offsetTop / 4)) {
+                changeHeadOnMobile(false)
+                return change = false
+            }
+        })
+       
+        if (current && change) {
+            document.querySelectorAll("header a").forEach(link => link.classList.remove("activeLink"))
+            let link = document.querySelector(`header a[href="#${current}"]`)
+            link.classList.add("activeLink")
+            
+            // change heading in mobile version
+            if (window.visualViewport.width < 1030) {
+                changeHeadOnMobile(link)
+            }
+        }
+     
+    })
+}
+
+function changeHeadOnMobile(link) {
+    let header = document.querySelector("header h1 a");
+    // If on Top, original header will show
+    if (link == false)  {
+        header.textContent = "PinkPink"
+        return
+    }
+    //else section ID will show
+    header.textContent = link.textContent     
+}
