@@ -1,8 +1,16 @@
 
 
+
 function createNav() {
     const allSections = document.querySelectorAll("section")
+    const fragment = document.createDocumentFragment()
 
+    // add heading to ul
+    let liH2 = document.createElement("li")
+    liH2.innerHTML = `<h2 class="heading">PinkPink<span>.</span> <button>&#10006;</button></h2>`
+    fragment.appendChild(liH2)
+
+    //create list items based on sections numbers
     allSections.forEach(section => {
     
         if (section.id != "") {
@@ -11,13 +19,17 @@ function createNav() {
            const name = idName.replace(/-/g, " ")
            
            //create new HTML Element with Name
-            const innerHTML = `<li><a href="#">${name}</a></li>`
-    
-            //Add element to ul
-            let ul = document.querySelector("nav ul")
-            ul.insertAdjacentHTML("beforeend", innerHTML)
+           let liElement = document.createElement("li")
+           liElement.innerHTML = `<a>${name}</a><button>&#62;</button>`
+           fragment.appendChild(liElement)
         }
     })
+        
+        
+    //Add element to ul
+    let ul = document.querySelector("nav ul")
+    ul.appendChild(fragment)
 }
 
 createNav()
+

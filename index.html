@@ -12,20 +12,160 @@
   <body>
     <header>
       <nav>
-        <h1>PinkPink</h1>
+        <h1 class="heading">PinkPink<span>.</span></h1>
+        <button id="burger-icon">
+          <div class="burger-row"></div>
+          <div class="burger-row"></div>
+          <div class="burger-row"></div>
+        </button>
         <ul></ul>
       </nav>
+      <section id="header-card">
+        <figure class="intro">
+          <div class="background-image"></div>
+
+          <figcaption>
+            <h3>QUALITY DESIGN FOR ALL</h3>
+            <p><strong>we create spaces, build dreams and shape environments.</strong></p>
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+            <p>EXPLORE OUR PRODUCTS</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cards">
+          <div>
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M27.7867 4.14666C27.1057 3.46533 26.2971 2.92485 25.4071 2.5561C24.5172 2.18735 23.5633 1.99756 22.6 1.99756C21.6367 1.99756 20.6828 2.18735 19.7929 2.5561C18.9029 2.92485 18.0943 3.46533 17.4133 4.14666L16 5.55999L14.5867 4.14666C13.2111 2.77107 11.3454 1.99827 9.4 1.99827C7.45462 1.99827 5.58892 2.77107 4.21333 4.14666C2.83774 5.52225 2.06494 7.38795 2.06494 9.33333C2.06494 11.2787 2.83774 13.1444 4.21333 14.52L5.62666 15.9333L16 26.3067L26.3733 15.9333L27.7867 14.52C28.468 13.839 29.0085 13.0304 29.3772 12.1405C29.746 11.2505 29.9358 10.2966 29.9358 9.33333C29.9358 8.37001 29.746 7.41613 29.3772 6.52619C29.0085 5.63624 28.468 4.82767 27.7867 4.14666V4.14666Z"
+                stroke="#6D0430"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <figcaption>
+            <h3>Best quality</h3>
+            <p>Good design begins with expressing a unique and exceptional story.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cards">
+          <div>
+            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.5 2L1.5 20H15L13.5 32L28.5 14H15L16.5 2Z" stroke="#6D0430" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <figcaption>
+            <h3>Rich understanding</h3>
+            <p>Our designers possess a rich understanding of all aspects of a project.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cards">
+          <div>
+            <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4.625 27.75V18.5C4.625 14.8201 6.08683 11.291 8.68889 8.68889C11.291 6.08683 14.8201 4.625 18.5 4.625C22.1799 4.625 25.709 6.08683 28.3111 8.68889C30.9132 11.291 32.375 14.8201 32.375 18.5V27.75"
+                stroke="#6D0430"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M32.375 29.2917C32.375 30.1095 32.0501 30.8937 31.4719 31.472C30.8937 32.0502 30.1094 32.375 29.2917 32.375H27.75C26.9322 32.375 26.148 32.0502 25.5698 31.472C24.9915 30.8937 24.6667 30.1095 24.6667 29.2917V24.6667C24.6667 23.849 24.9915 23.0647 25.5698 22.4865C26.148 21.9082 26.9322 21.5834 27.75 21.5834H32.375V29.2917ZM4.625 29.2917C4.625 30.1095 4.94985 30.8937 5.52809 31.472C6.10632 32.0502 6.89058 32.375 7.70833 32.375H9.25C10.0678 32.375 10.852 32.0502 11.4302 31.472C12.0085 30.8937 12.3333 30.1095 12.3333 29.2917V24.6667C12.3333 23.849 12.0085 23.0647 11.4302 22.4865C10.852 21.9082 10.0678 21.5834 9.25 21.5834H4.625V29.2917Z"
+                stroke="#6D0430"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <figcaption>
+            <h3>Great support</h3>
+            <p>Our forward thinking design teams are leading successful projects worldwide.</p>
+          </figcaption>
+        </figure>
+      </section>
     </header>
 
     <main>
-      <section id="explore"></section>
+      <section id="showcase">
+        <h2>
+          Explore our exclusive design showcase.
+          <button>&#8592;</button>
+          <button>&#8594;</button>
+        </h2>
+        <div class="card-container">
+          <img src="./src/pictures/showcase01.jpg" alt="" />
+          <img src="./src/pictures/showcase02.jpg" alt="" />
+          <img src="./src/pictures/showcase03.jpg" alt="" />
+          <div class="card">
+            <h3>Mopand</h3>
+            <p>PHONIX, ARIZONA <button>&#8594;</button></p>
+          </div>
+        </div>
+      </section>
 
-      <section id="how-we-do-it"></section>
+      <section id="how-we-do-it">
+        <h2>This is how we do it</h2>
+        <ol>
+          <li>
+            <div class="card">
+              <h3>Discuss the concept with us</h3>
+              <p>
+                Do you need a talented design eye to cast vision and look for one-of-a-kind opportunities in your home? This is a robust
+                consultation-conversation package.
+              </p>
+              <button>LEARN MORE</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <h3>Confirm the provided design.</h3>
+              <p>
+                We will send you a proposal and service agreement for your review. Then we will get down to the exciting stuff and communicate concepts
+                visually.
+              </p>
+              <button>LEARN MORE</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <h3>We fully design and accessorize your home.</h3>
+              <p>
+                Specializing in whole-home transformations, we design with intention to deliver interiors with a depth of character and emotion, and a breadth
+                of function and practicality.
+              </p>
+              <button>LEARN MORE</button>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-      <section id="projects"></section>
+      <section id="our-projects">
+        <img src="./src/pictures/projects01.jpg" alt="" />
+        <div class="card">
+          <h3>Spend your happy time with full comfort.</h3>
+          <p>As we develop each project's unique expression, we are transforming context and heritage into compelling stories and unparalleled experiences.</p>
+          <button>EXPLORE OUR PROJECTS</button>
+        </div>
+      </section>
 
-      <section id="quote">
-        <figure></figure>
+      <section id="testimonials">
+        <figure>
+          <figcaption>
+            <blockquote>“I absolutely love my new home and cannot thank you enough for all of your time and expertise”</blockquote>
+            <address><a href="'" rel="author">Jenny Wilson</a></address>
+            <abbr title="Delaware">St. Celina, Delaware</abbr>
+          </figcaption>
+          <div class="player">
+            <svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="39.3948" cy="39.3948" r="37.8948" fill="white" fill-opacity="0.14" stroke="white" stroke-width="3" />
+            </svg>
+            <img src="./src/pictures/testimonials01.jpg" alt="" />
+          </div>
+        </figure>
       </section>
     </main>
 
@@ -68,6 +208,40 @@
       </section>
     </aside>
 
-    <footer></footer>
+    <footer>
+      <ul>
+        <li>
+          <ul>
+            <li><h3>PinkPink.</h3></li>
+            <li>We make furniture with love and passions. No doubt, really.</li>
+            <li>©Ididit!</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><h3>Contact</h3></li>
+            <li><abbr title="Seattle">62 Orp St, Seattle, USA</abbr></li>
+            <li><a href="mailto:sales@furnatur.com" rel="email">sales@furnatur.com</a></li>
+            <li><a href="tel:+1 800 726 915273" rel="tel">+1 800 726 915273</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><h3>PRODUCT</h3></li>
+            <li><a href="#">Living Room</a></li>
+            <li><a href="#">Bed Room</a></li>
+            <li><a href="#">Office Room</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><h3>OUR COMPANY</h3></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Products</a></li>
+          </ul>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

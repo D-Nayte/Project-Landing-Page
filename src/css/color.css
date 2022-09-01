@@ -1,5 +1,6 @@
 :root {
-  --mainColor: cornsilk;
-  --offColor: rgba(255, 237, 241, 0.607);
-  --textColor: firebrick;
+  --mainColor: #6d0430;
+  --offColor: #eb5296;
+  --textColor: #102a42;
+  --highlightColor: #f5f5f5;
 }

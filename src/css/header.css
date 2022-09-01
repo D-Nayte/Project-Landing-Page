@@ -1,23 +1,75 @@
+/* Navbar */
 nav {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  display: flex;
+  margin-bottom: 8.05vw;
 }
 
-nav h1 {
+/* Navbar heading */
+nav h1,
+.heading {
   flex-grow: 1;
+  font-weight: 900;
 }
 
+nav h1 span,
+.heading span {
+  color: var(--offColor);
+}
+
+nav h2 {
+  display: flex;
+  align-items: center;
+}
+
+nav h2 button {
+  margin-left: auto;
+  border: none;
+  font-weight: inherit;
+  font-size: 1rem;
+}
+
+/* Navbar unsorted List */
 nav ul {
   flex-grow: 5;
   list-style: none;
-  display: flex;
+  position: absolute;
+  flex-direction: column;
+  left: 40%;
+  top: -58%;
+  transform: scale(0.1);
   justify-content: space-between;
+  display: flex;
+  opacity: 0;
+  width: 100%;
+  background-color: transparent;
+  pointer-events: none;
+  transition: all 450ms;
 }
+
 nav ul li {
   transition: all 250ms;
   border-bottom: 4px solid transparent;
   border-radius: 25%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--padding);
+}
+
+nav ul li a,
+nav li h2 {
+  flex-grow: 1;
+  border-bottom: 2px solid var(--highlightColor);
+  padding-bottom: 8.05vw;
+  margin-top: 8.05vw;
+}
+
+nav ul li button {
+  border-bottom: 2px solid var(--highlightColor);
+  padding-bottom: 8.05vw;
+  margin-top: 8.05vw;
+  border: none;
 }
 
 nav li .active {
@@ -26,4 +78,138 @@ nav li .active {
 
 nav ul li:hover {
   transform: scale(1.05);
+}
+
+/* Buger Icon in mobile view */
+#burger-icon {
+  display: flex;
+  flex-direction: column;
+  width: 31px;
+  gap: 7px;
+  pointer-events: fill;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  transition: all 250ms;
+}
+
+#burger-icon:hover {
+  transform: scale(1.05);
+}
+
+#burger-icon:focus {
+  transform: scale(0.3);
+}
+
+#burger-icon .burger-row {
+  flex-grow: 2;
+  width: 100%;
+  height: 0;
+  border: 3px solid black;
+  border-radius: 7px;
+}
+
+#burger-icon:focus ~ ul {
+  opacity: 1;
+  pointer-events: all;
+  left: 0;
+  top: 0;
+  transform: scale(1);
+  background-color: white;
+}
+
+/* Card */
+
+#header-card .intro {
+  background-color: var(--highlightColor);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
+  margin-bottom: 92px;
+}
+
+#header-card .intro .background-image {
+  width: auto;
+  height: 100vw;
+  background-image: url("../pictures/header1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#header-card .intro figcaption {
+  padding: 0 6.66vw;
+}
+
+#header-card .intro h3 {
+  font-size: 0.38rem;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  margin-top: 38px;
+}
+
+#header-card strong {
+  font-size: 1.21rem;
+  line-height: 37px;
+  font-weight: 600;
+}
+
+#header-card .intro figcaption p:nth-child(3) {
+  margin-top: 10px;
+  margin-bottom: 42px;
+  font-size: 0.8rem;
+  line-height: 27px;
+}
+#header-card .intro figcaption p:nth-child(4) {
+  font-size: 0.9rem;
+}
+#header-card .intro figcaption p:last-child {
+  margin-bottom: 55px;
+  font-size: 0.5rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+#header-card .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 70px;
+  margin-bottom: 105px;
+}
+
+#header-card .cards div {
+  background-color: var(--highlightColor);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 23px;
+}
+
+#header-card .cards h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#header-card .cards p {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+@media (min-width: 1024px) {
+  #burger-icon {
+    display: none;
+  }
+
+  nav ul {
+    position: relative;
+    display: flex;
+  }
 }
