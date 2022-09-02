@@ -20,7 +20,7 @@ No Installation needed.
 [(Back to top)](#table-of-contents)
 
 
-[GNU General Public License version 3](https://github.com/D-Nayte/Project-Landing-Page/blob/main/LICENSE)
+[MIT-License](https://github.com/D-Nayte/Project-Landing-Page/blob/main/LICENSE)
 
 
 
@@ -35,4 +35,4 @@ Leave a star in GitHub, give a clap in Medium and share this guide if you found 
 
 <!-- Add the footer here -->
 
-[Footer](https://github.com/D-Nayte)
+[My Profile](https://github.com/D-Nayte)

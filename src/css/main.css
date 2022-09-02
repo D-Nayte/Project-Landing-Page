@@ -71,15 +71,17 @@ button {
   display: flex;
 }
 
-#pointer {
+.pointer {
   color: var(--offColor);
 }
 
-button {
+button,
+.button {
   cursor: pointer;
   transition: all 50ms;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   transform: scale(1.05);
 }

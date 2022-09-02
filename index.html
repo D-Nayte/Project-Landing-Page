@@ -12,18 +12,18 @@
   <body>
     <header id="header">
       <nav>
-        <h1 class="heading"><a href="#header-card">PinkPink</a><span id="pointer">.</span></h1>
-        <button id="burger-icon">
+        <h1 class="heading"><a href="#header-card">PinkPink</a><span class="pointer">.</span></h1>
+        <div class="button" id="burger-icon">
           <div class="burger-row"></div>
           <div class="burger-row"></div>
           <div class="burger-row"></div>
-        </button>
+        </div>
         <ul></ul>
       </nav>
     </header>
 
     <main>
-      <section id="header-card" id="home">
+      <section id="header-card">
         <figure class="intro">
           <div class="background-image"></div>
 
@@ -156,6 +156,7 @@
       </section>
 
       <section id="our-projects" class="main">
+        <h2 class="none">Our-Projects</h2>
         <div class="picture-container">
           <img src="./src/pictures/projects01.jpg" alt="" />
         </div>
@@ -167,6 +168,8 @@
       </section>
 
       <section id="testimonials" class="main">
+        <h2 class="none">Testimonials</h2>
+
         <figure>
           <figcaption>
             <blockquote>“I absolutely love my new home and cannot thank you enough for all of your time and expertise”</blockquote>
@@ -198,22 +201,22 @@
           within few minutes.
         </p>
 
-        <form action="#" method="POST">
+        <form id="form" action="#" method="POST">
           <label
             >Your first name
-            <input type="text" name="firstName" placeholder="Write your first name here" />
+            <input type="text" name="firstName" placeholder="Write your first name here" required />
           </label>
           <label
             >Your Surname
-            <input type="text" name="surname" placeholder="Write your surname name here" />
+            <input type="text" name="surname" placeholder="Write your surname name here" required />
           </label>
           <label
             >Email Adress
-            <input type="email" name="email" placeholder="Write your email here" />
+            <input type="email" name="email" placeholder="Write your email here" required />
           </label>
           <label
             >Message
-            <textarea name="message" cols="0" rows="4" placeholder="Add a brief of your Project"></textarea>
+            <textarea name="message" rows="4" placeholder="Add a brief of your Project"></textarea>
           </label>
           <label
             >Phone Number
@@ -234,7 +237,7 @@
         <li>
           <ul>
             <li>
-              <h3>PinkPink <span id="pointer">.</span></h3>
+              <h3>PinkPink <span class="pointer">.</span></h3>
             </li>
             <li>We make furniture with love and passions. No doubt, really.</li>
             <li class="none">©Ididit!</li>
@@ -245,7 +248,7 @@
             <li><h3>Contact</h3></li>
             <li><abbr title="Seattle">62 Orp St, Seattle, USA</abbr></li>
             <li><a href="mailto:sales@furnatur.com" rel="email">sales@furnatur.com</a></li>
-            <li><a href="tel:+1 800 726 915273" rel="tel">+1 800 726 915273</a></li>
+            <li><a href="tel:+1800726915273" rel="tel">+1 800 726 915273</a></li>
           </ul>
         </li>
         <li class="pointer-product">

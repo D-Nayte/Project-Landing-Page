@@ -1,8 +1,11 @@
 
 window.addEventListener("DOMContentLoaded", () => {
+   
     createNavListItems()
     addLinkBehaviorOnClick()
     addLinkTrackerByScroll()
+    galerieButtonFunctionality()
+    handleForm()
 })
 
 function createNavListItems() {
@@ -33,6 +36,8 @@ function createNavListItems() {
     let ul = document.querySelector("nav ul")
     ul.appendChild(fragment)
 }
+
+
 
 function addLinkBehaviorOnClick() {
     //Mobile Button behavior on click
@@ -71,6 +76,7 @@ function addLinkTrackerByScroll() {
             }
         })
        
+        // Only changes LINK styles if last change made, is not used anymore (if active content gets outside viewport)
         if (current && change) {
             document.querySelectorAll("header a").forEach(link => link.classList.remove("activeLink"))
             let link = document.querySelector(`header a[href="#${current}"]`)
@@ -96,28 +102,46 @@ function changeHeadOnMobile(link) {
     header.textContent = link.textContent     
 }
 
+function galerieButtonFunctionality() {
+    let buttons = document.querySelectorAll("button")
+    let translateValue = 0
 
-let buttonLeft = document.querySelector(".b-left")
-let buttonRight = document.querySelector(".b-right")
-let buttons = document.querySelectorAll("button")
-
-let translateValue = 0
-buttons.forEach(button => {
+    //Tage all galerie buttons, add left or right swipe based on the HTML class Name
+    buttons.forEach(button => {
     button.addEventListener("click",(event) => {
         let galerie = document.querySelector(".examples")
         // if right arrow was clicked
         if (event.target.classList.value.includes("b-right")) {
             translateValue -= 33.33333
             galerie.style.transform = `translateX(${translateValue}%)`;
+        // is left Arrow was clicked    
         } else {
             translateValue +=33.333333;
             galerie.style.transform = `translateX(${translateValue}%)`;
-
         }
-
-        
-        
-        console.log(galerie);
     })
 })
+}
+
+
+
+
+function handleForm (){
+let form = document.querySelector("#form");
+form.addEventListener("submit", event => {
+    event.preventDefault()
+    let formData = new FormData(event.target)
+    let obj = {};
+    formData.forEach((value, key) => {
+        if (value.length <=1) {
+            value = "NO ENTRY!"
+        }
+        obj[key] = value;
+    })
+    let json = JSON.stringify(obj) 
+    alert("The entered data has been successfully processed and can now be sent to a backend. Data in JSON format:"+json)
+    form.reset()
+})
+}
+
 
