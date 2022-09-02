@@ -45,6 +45,7 @@ footer > p {
 @media (min-width: 1024px) {
   footer > ul {
     flex-direction: row;
+    -moz-column-gap: 50px;
     column-gap: 50px;
     justify-content: space-between;
     align-items: stretch;

@@ -55,6 +55,7 @@
 #showcase .examples img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -109,6 +110,7 @@
     height: 500px;
     transform: translateX(0);
     display: flex;
+    -moz-column-gap: 22px;
     column-gap: 22px;
   }
 
@@ -123,7 +125,9 @@
 
   section#showcase .examples picture img {
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    -o-object-position: 50% 50%;
     object-position: 50% 50%;
     height: 100%;
   }
