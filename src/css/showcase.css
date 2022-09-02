@@ -118,6 +118,7 @@
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
   }
 
   section#showcase .examples picture img {

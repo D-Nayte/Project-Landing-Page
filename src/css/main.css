@@ -74,3 +74,12 @@ button {
 #pointer {
   color: var(--offColor);
 }
+
+button {
+  cursor: pointer;
+  transition: all 50ms;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
