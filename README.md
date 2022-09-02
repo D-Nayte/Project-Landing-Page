@@ -31,7 +31,7 @@ No Installation needed.
 
 Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
 
-Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
+
 
 <!-- Add the footer here -->
 
