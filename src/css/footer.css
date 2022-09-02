@@ -41,3 +41,73 @@ footer > p {
   font-size: 15px;
   line-height: 28px;
 }
+
+@media (min-width: 1024px) {
+  footer > ul {
+    flex-direction: row;
+    column-gap: 50px;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 64px;
+    flex-basis: 25%;
+  }
+
+  footer > ul > li {
+    flex-basis: 25%;
+  }
+
+  footer > ul > li:first-child {
+    flex-basis: 33%;
+    margin-right: 20px;
+  }
+
+  footer > ul > li:first-child > ul {
+    height: 100%;
+    text-align: left;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  footer > ul > li:first-child > ul > li:nth-child(2) {
+    justify-self: flex-start;
+    flex-basis: 40%;
+  }
+
+  footer > ul li:nth-of-type(1n + 2) > ul {
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  footer > ul > li:first-child li:last-child {
+    display: block;
+  }
+
+  footer p:last-child {
+    display: none;
+  }
+
+  footer > ul li:nth-of-type(1n + 2) > ul h3 {
+    color: var(--offColor);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 73px;
+  }
+
+  .pointer-our-company {
+    flex-shrink: 2;
+  }
+  .pointer-product {
+    flex-shrink: 2;
+  }
+}
+
+@media (min-width: 1366px) {
+  footer > ul {
+    padding: 110px 104px 154px;
+  }
+}

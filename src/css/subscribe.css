@@ -93,7 +93,7 @@
 #subscribe input,
 textarea {
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--highlightColor);
   resize: none;
   font-size: 15px;
   opacity: 0.5;
@@ -107,4 +107,32 @@ textarea {
 #subscribe p:last-child {
   font-size: 12px;
   margin-bottom: 99px;
+}
+
+@media (min-width: 1024px) {
+  #sub-container {
+    padding: 121px 58px 0;
+  }
+  #subscribe h2,
+  #subscribe p {
+    padding: 0 201px;
+    text-align: center;
+  }
+
+  #subscribe form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "firstName subject"
+      "surname message"
+      "email message"
+      "phone button";
+    padding: 69px 80px;
+  }
+}
+
+@media (min-width: 1366px) {
+  #sub-container {
+    padding: 121px 214px;
+  }
 }

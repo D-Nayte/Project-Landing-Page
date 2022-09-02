@@ -53,3 +53,41 @@
   bottom: 10rem;
   transform: rotatey(180deg);
 }
+
+@media (min-width: 1024px) {
+  #testimonials {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  #testimonials figure {
+    display: flex;
+    flex-direction: row;
+    height: 488px;
+  }
+
+  #testimonials figcaption {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #testimonials .player {
+    width: 50%;
+    height: 100%;
+  }
+
+  #testimonials .player img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #testimonials blockquote {
+    font-size: 36px;
+  }
+}

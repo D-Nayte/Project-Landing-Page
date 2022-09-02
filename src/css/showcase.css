@@ -46,7 +46,6 @@
   border-radius: 15px;
   transition: all 450ms ease-in-out;
   position: relative;
-  /* transform: translateX(-60vw); */
 }
 
 #showcase .card-container picture {
