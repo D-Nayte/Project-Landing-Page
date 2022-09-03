@@ -21,6 +21,4 @@ No Installation needed.
 
 [(Back to top)](#table-of-contents)
 
-Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
-
 [My Profile](https://github.com/D-Nayte)
