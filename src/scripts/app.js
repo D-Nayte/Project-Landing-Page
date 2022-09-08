@@ -64,7 +64,7 @@ function addLinkTrackerByScroll() {
         change = true;
         current = section.id;
       }
-      // standart header and no behavior on start heigh
+      // standart header and no behavior on start height
       if (window.scrollY <= section.offsetTop / 4) {
         changeHeadOnMobile(false);
         return (change = false);
