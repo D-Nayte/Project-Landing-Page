@@ -21,6 +21,7 @@ function generateNav() {
 
     //add scroll behavior to the anchor
     anchor.parentElement.addEventListener("click", (event) => {
+      let scrolloptions = { behavior: "smooth" };
       event.preventDefault();
       section.scrollIntoView(scrolloptions);
     });
@@ -41,7 +42,7 @@ function sectionHighlighter() {
       //"highlightNavbarAnchor()" will highlight the Navigation anchor/List item wich belongs to the active "section" in view
       if (elementTop < windowHeight && elementBottom > windowHeight) {
         section.classList.add("active-section");
-        highlightNavbarAnchor(section, true);
+        highlightNavbarAnchor(section);
       } else {
         section.classList.remove("active-section");
       }
@@ -49,12 +50,12 @@ function sectionHighlighter() {
   });
 }
 
-function highlightNavbarAnchor(section, active) {
+function highlightNavbarAnchor(section) {
+  let allAnchor = select("nav li", true);
   let anchor = select(`a[href="#${section.id}"]`).parentElement;
 
-  if (!active) {
-    return anchor.classList.remove("active-link");
-  }
+  // remove all "active-link" classes and apply only on the viewed one
+  allAnchor.forEach((anchor) => anchor.classList.remove("active-link"));
   return anchor.classList.add("active-link");
 }
 
@@ -69,11 +70,15 @@ function mobileNavButton() {
 
 function formHandler() {
   let form = document.querySelector("#form");
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     let formData = new FormData(event.target);
     let obj = {};
+
+    // Turn the Formdata into a JSON
     formData.forEach((value, key) => {
+      //if there was no input, replace it with "NO ENTRY!"
       if (value.length <= 1) {
         value = "NO ENTRY!";
       }
@@ -84,6 +89,8 @@ function formHandler() {
       `The entered data has been successfully processed! It can now be sent to a backend. 
     Data in JSON format:` + json
     );
+
+    //clear the Form
     form.reset();
   });
 }
