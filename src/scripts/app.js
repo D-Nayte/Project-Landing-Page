@@ -11,7 +11,6 @@ function generateNav() {
 
   //Create the List items and its anchors based on the amount of "<sections>" with the class "main" and uses the data attribute to set the anchor content
   allSections.forEach((section) => {
-    console.log(section);
     const newListItem = create("li", "", { parent: navBar, position: "beforeEnd" });
     let anchor = create("a", "", { parent: newListItem, position: "beforeEnd" });
     anchor.href = `#${section.id}`;
