@@ -46,6 +46,9 @@ aside {
 
 section {
   border-radius: 20px;
+  transform: scale(1);
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0);
+  transition: all 250ms;
 }
 
 ul {
@@ -84,4 +87,10 @@ button,
 button:hover,
 .button:hover {
   transform: scale(1.05);
+}
+
+.active-section {
+  transform: scale(1.03);
+  box-shadow: 0 0 50px -20px var(--offColor);
+  transition: all 450ms;
 }

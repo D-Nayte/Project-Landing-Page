@@ -5,7 +5,8 @@ header {
   z-index: 2;
   top: 0;
   margin-top: 23px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
 }
 
 nav {
@@ -14,7 +15,6 @@ nav {
   justify-content: space-between;
   margin-bottom: 8.05vw;
   top: 0;
-  background-color: white;
   position: relative;
 }
 
@@ -50,7 +50,7 @@ nav ul {
   display: flex;
   opacity: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   pointer-events: none;
   transition: all 250ms;
   border-bottom: 6px solid var(--offColor);
@@ -59,10 +59,13 @@ nav ul {
 nav ul li {
   transition: all 250ms;
   border-bottom: 4px solid transparent;
-  border-radius: 25%;
+  border-radius: 0.2rem;
   display: flex;
   justify-content: space-between;
   padding: 0 var(--padding);
+  box-shadow: 0 0 10px -5px #e774a800 inset, 0 0 30px 0px #eb529700;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 450ms;
 }
 
 nav ul li a {
@@ -70,6 +73,8 @@ nav ul li a {
   border-bottom: 2px solid var(--offColor);
   padding-bottom: 8.05vw;
   margin-top: 8.05vw;
+  background-color: transparent;
+  transition: all 450ms ease-in-out;
 }
 
 nav ul li button {
@@ -77,10 +82,6 @@ nav ul li button {
   padding-bottom: 8.05vw;
   margin-top: 8.05vw;
   border: none;
-}
-
-nav li .active {
-  border-bottom: 2px solid red;
 }
 
 nav ul li:hover {
@@ -127,7 +128,6 @@ nav ul li:last-child {
   left: 0;
   top: 0;
   transform: scale(1);
-  background-color: white;
 }
 
 /* Card */
@@ -245,6 +245,7 @@ nav ul li:last-child {
     opacity: 1;
     border: none;
     pointer-events: all;
+    background-color: transparent !important;
   }
 
   #header ul li {
@@ -252,6 +253,11 @@ nav ul li:last-child {
     padding: 0;
     margin: 0;
     border: none;
+  }
+
+  #header nav ul li.active-link {
+    box-shadow: 0 0 10px -5px #e774a8 inset, 0 0 30px 0px #eb5296;
+    background-color: rgba(255, 255, 255, 1);
   }
 
   #header li a {
@@ -264,7 +270,7 @@ nav ul li:last-child {
     transition: all 1000ms;
   }
 
-  #header .activeLink {
+  #header .active-Link {
     border-bottom-color: var(--offColor);
   }
 

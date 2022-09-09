@@ -1,136 +1,67 @@
-window.addEventListener("DOMContentLoaded", () => {
-  createNavListItems();
-  addLinkBehaviorOnClick();
-  addLinkTrackerByScroll();
-  galerieButtonFunctionality();
-  handleForm();
+//helper functions, "create()" creates HTML Elements and place it right to a given parent Element, "select()" just selects HTML, with a true boolean selects all Elements!
+import { create, select } from "./helper.js";
+
+window.addEventListener("load", () => {
+  generateNav();
+  sectionHighlighter();
+  mobileNavButton();
 });
 
-function createNavListItems() {
-  const allSections = document.querySelectorAll(".main");
-  const fragment = document.createDocumentFragment();
+function generateNav() {
+  const navBar = select("nav ul");
+  let allSections = select(".main", true);
 
-  // add heading to ul
-  let liH2 = document.createElement("li");
-  liH2.innerHTML = `<h2 class="heading"><a href="#header-card" >PinkPink<span id="pointer">.</span></a> <button>&#10006;</button></h2>`;
-  fragment.appendChild(liH2);
-
-  //create list items based on sections quantity
+  //Create the List items and its anchors based on the amount of "<sections>" with the class "main" and uses the data attribute to set the anchor content
   allSections.forEach((section) => {
-    if (section.id != "") {
-      //Create Link Name from Link ID
-      let idName = section.id[0].toUpperCase() + section.id.slice(1);
-      const name = idName.replace(/-/g, " ");
+    const newListItem = create("li", "", { parent: navBar, position: "beforeEnd" });
+    let anchor = create("a", "", { parent: newListItem, position: "beforeEnd" });
+    anchor.href = `#${section.id}`;
+    anchor.textContent = section.dataset.heading;
 
-      //create new HTML Element with Name
-      let liElement = document.createElement("li");
-      liElement.innerHTML = `<a href="#${section.id}">${name}</a><button>&#62;</button>`;
-      fragment.appendChild(liElement);
-    }
-  });
-
-  //Add element to ul
-  let ul = document.querySelector("nav ul");
-  ul.appendChild(fragment);
-}
-
-function addLinkBehaviorOnClick() {
-  //Mobile Button behavior on click
-  let navButton = document.querySelector("#burger-icon");
-  navButton.addEventListener("click", () => navButton.classList.toggle("active"));
-  //standart Link behavior on click
-  let navLinks = document.querySelectorAll("header li");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navButton.classList.toggle("active");
-      navLinks.forEach((link) => link.classList.remove("active"));
-      link.classList.toggle("active");
+    //add scroll behavior to the anchor
+    anchor.parentElement.addEventListener("click", (event) => {
+      event.preventDefault();
+      section.scrollIntoView(scrolloptions);
     });
   });
 }
 
-function addLinkTrackerByScroll() {
-  const allSections = document.querySelectorAll(".main");
-  let current = "";
-  let change = false;
+function sectionHighlighter() {
+  let allSections = select(".main", true);
 
-  window.addEventListener("scroll", (event) => {
+  //add a scroll eventlistener to Highlight the "section" wich is in view
+  window.addEventListener("scroll", () => {
     allSections.forEach((section) => {
-      // only change DOM by enter a new section
-      if (window.scrollY >= section.offsetTop - section.scrollHeight / 2) {
-        if (current == section.id) {
-          return (change = false);
-        }
-        change = true;
-        current = section.id;
-      }
-      // standart header and no behavior on start height
-      if (window.scrollY <= section.offsetTop / 4) {
-        changeHeadOnMobile(false);
-        return (change = false);
-      }
-    });
+      let elementTop = section.getBoundingClientRect().top;
+      let elementBottom = section.getBoundingClientRect().bottom;
+      let windowHeight = window.innerHeight * 0.5;
 
-    // Only changes LINK styles if last change made, is not used anymore (if active content gets outside viewport)
-    if (current && change) {
-      document.querySelectorAll("header a").forEach((link) => link.classList.remove("activeLink"));
-      let link = document.querySelector(`header a[href="#${current}"]`);
-      link.classList.add("activeLink");
-
-      // change heading in mobile version
-      if (window.visualViewport.width < 1000) {
-        changeHeadOnMobile(link);
-      }
-    }
-  });
-}
-
-function changeHeadOnMobile(link) {
-  let header = document.querySelector("header h1 a");
-  // If viewport on Top, original header will show
-  if (link == false) {
-    header.textContent = "PinkPink";
-    return;
-  }
-  //else section ID will show
-  header.textContent = link.textContent;
-}
-
-function galerieButtonFunctionality() {
-  let buttons = document.querySelectorAll("button");
-  let translateValue = 0;
-
-  //Tage all galerie buttons, add left or right swipe based on the HTML class Name
-  buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      let galerie = document.querySelector(".examples");
-      // if right arrow was clicked
-      if (event.target.classList.value.includes("b-right")) {
-        translateValue -= 33.33333;
-        galerie.style.transform = `translateX(${translateValue}%)`;
-        // is left Arrow was clicked
+      // add the class "active-section" while the Element is covering half of the view, otherwise delete the class name.
+      //"highlightNavbarAnchor()" will highlight the Navigation anchor/List item wich belongs to the active "section" in view
+      if (elementTop < windowHeight && elementBottom > windowHeight) {
+        section.classList.add("active-section");
+        highlightNavbarAnchor(section, true);
       } else {
-        translateValue += 33.333333;
-        galerie.style.transform = `translateX(${translateValue}%)`;
+        section.classList.remove("active-section");
       }
     });
   });
 }
 
-function handleForm() {
-  let form = document.querySelector("#form");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let formData = new FormData(event.target);
-    let obj = {};
-    formData.forEach((value, key) => {
-      if (value.length <= 1) {
-        value = "NO ENTRY!";
-      }
-      obj[key] = value;
-    });
-    let json = JSON.stringify(obj);
-    alert("The entered data has been successfully processed and can now be sent to a backend. Data in JSON format:" + json);
-    form.reset();
+function highlightNavbarAnchor(section, active) {
+  let anchor = select(`a[href="#${section.id}"]`).parentElement;
+
+  if (!active) {
+    return anchor.classList.remove("active-link");
+  }
+  return anchor.classList.add("active-link");
+}
+
+function mobileNavButton() {
+  let nav = select("nav");
+  let burgerButton = select("#burger-icon");
+
+  nav.addEventListener("click", () => {
+    burgerButton.classList.toggle("active");
   });
 }
