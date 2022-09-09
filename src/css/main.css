@@ -90,7 +90,7 @@ button:hover,
 }
 
 .active-section {
-  transform: scale(1.03);
+  transform: scale(1.01);
   box-shadow: 0 0 50px -20px var(--offColor);
   transition: all 450ms;
 }

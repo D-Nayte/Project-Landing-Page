@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   generateNav();
   sectionHighlighter();
   mobileNavButton();
+  formHandler();
 });
 
 function generateNav() {
@@ -63,5 +64,26 @@ function mobileNavButton() {
 
   nav.addEventListener("click", () => {
     burgerButton.classList.toggle("active");
+  });
+}
+
+function formHandler() {
+  let form = document.querySelector("#form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let formData = new FormData(event.target);
+    let obj = {};
+    formData.forEach((value, key) => {
+      if (value.length <= 1) {
+        value = "NO ENTRY!";
+      }
+      obj[key] = value;
+    });
+    let json = JSON.stringify(obj);
+    alert(
+      `The entered data has been successfully processed! It can now be sent to a backend. 
+    Data in JSON format:` + json
+    );
+    form.reset();
   });
 }
